@@ -1,45 +1,93 @@
-import files
+# Implementation of Univariate Linear Regression
+## AIM:
+To implement univariate Linear Regression to fit a straight line using least squares.
+
+Equipments Required:
+Hardware – PCs
+Anaconda – Python 3.7 Installation / Jupyter notebook
+Algorithm
+Get the independent variable X and dependent variable Y.
+Calculate the mean of the X -values and the mean of the Y -values.
+Find the slope m of the line of best fit using the formula.
+image
+
+4. Compute the y -intercept of the line by using the formula:
+image
+
+5. Use the slope m and the y -intercept to form the equation of the line. 6. Obtain the straight line equation Y=mX+b and plot the scatterplot.
+Program:
+
+Program to implement univariate Linear Regression to fit a straight line using least squares.
+Developed by: DHANUSH S
+RegisterNumber: 212221230020
+~~~
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
+data = pd.read_csv("ex1.txt",header=None)
+data
 
-assign input
+plt.scatter(data[0],data[1])
+plt.xticks(np.arange(5,30,step=5))
+plt.yticks(np.arange(-5,30,step=5))
+plt.xlabel("Population of City(10,000s)")
+plt.ylabel("Profit($10,000)")
+plt.title("Profit prediction")
 
-X=np.array([0,1,2,3,4,5,6,7,8,9])
-Y=np.array([1,3,2,5,7,8,8,9,10,12])
+def computeCost(X,y,theta):
+  m = len(y)
+  h = X.dot(theta)
+  square_err = (h-y)**2
+  return 1/(2*m) * np.sum(square_err)
+
+  data1 = data.values
+m = data1[:,0].size
+X = np.append(np.ones((m,1)),data1[:,0].reshape(m,1),axis=1)
+y = data1[:,1].reshape(m,1)
+theta = np.zeros((2,1)) 
+print("The value is : ",computeCost(X,y,theta))
 
 
- mean values of input
+def gradientdescent(X,y,theta,alpha,numiter):
+  m = len(y)
+  hist = []
 
-X_mean=np.mean(X)
-print("X_mean =",X_mean)
-Y_mean=np.mean(Y)
-print("y_mean =",Y_mean)
+  for i in range(numiter):
+    predictions = X.dot(theta)
+    error = np.dot(X.transpose(),(predictions-y))
+    descent = alpha * 1/m * error
+    theta -= descent
+    hist.append(computeCost(X,y,theta)) 
+  return theta,hist
 
-num=0
-denum=0
+  theta ,hist = gradientdescent(X,y,theta,0.01,1500)
+print("h(x) = "+str(round(theta[0,0],2))+" + "+str(round(theta[1,0],2))+"x1")
 
-for i in range(len(X)):
-  num+=(X[i]-X_mean)*(Y[i]-Y_mean)
-  denum+=(X[i]-X_mean)**2
+plt.figure(figsize = (7,7))
+plt.plot(hist)
+plt.xlabel("Iterations")
+plt.ylabel("$J(\Theta)$")
+plt.title("Cost function using Gradient Descent")
 
- find m
-print("find m")
-m=num/denum
-print("m=",m)
+plt.figure(figsize = (7,7))
+plt.scatter(data[0],data[1])
+xval = [x for x in range(25)]
+yval = [y*theta[1] + theta[0] for y in xval]
+plt.plot(xval,yval,color='purple')
+plt.xticks(np.arange(5.30,step=5))
+plt.yticks(np.arange(-5,30,step=5))
+plt.xlabel("Population of city (10,000s)")
+plt.ylabel("Profit ($ 10,1000)")
+plt.title("Profit Prediction")
 
-#find b
-print("find b")
-b=(Y_mean)-(m*X_mean)
-print("b =",b)
+def predict(x,theta):
+  predictions = np.dot(theta.transpose(),x)
+  return predictions[0]
 
-find Y_pred
-print("find Y_pred")
-Y_pred=m*X+b
-print("Y_pred =",Y_pred)
+predict1 = predict(np.array([1,3.5]),theta)*10000
+print("For population of 35,000, we pewdict a profit of $ "+str(round(predict1,0)))
 
-plot graph
+predict2 = predict(np.array([1,7]),theta)*10000
+print("For population of 70,000, we pewdict a profit of $ "+str(round(predict2,0)))
 
-plt.scatter(X,Y,color='orange')
-plt.plot(X,Y_pred,color='maroon')
-print("Graph")
-plt.show()
+~~~
