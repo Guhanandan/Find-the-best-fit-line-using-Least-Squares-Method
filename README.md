@@ -4,6 +4,7 @@ To implement univariate Linear Regression to fit a straight line using least squ
 
 ## Equipments Required:
 1.Hardware – PCs
+
 2.Anaconda – Python 3.7 Installation / Jupyter notebook
 ## Algorithm:
  1.Get the independent variable X and dependent variable Y.
@@ -102,3 +103,5 @@ print("For population of 70,000, we pewdict a profit of $ "+str(round(predict2,0
 [ml3](https://user-images.githubusercontent.com/100425381/195586114-adf5c4d8-4fc3-45f2-9fa8-544a82687acd.png)
 ![ml4](https://user-images.githubusercontent.com/100425381/195586416-836058f8-b9af-47bb-96f6-cfc884969069.png)
 
+## Result:
+Thus the univariate Linear Regression was implemented to fit a straight line using least squares using python programming.
