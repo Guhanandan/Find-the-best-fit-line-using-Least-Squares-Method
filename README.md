@@ -5,7 +5,7 @@ To implement univariate Linear Regression to fit a straight line using least squ
 ## Equipments Required:
 Hardware – PCs
 Anaconda – Python 3.7 Installation / Jupyter notebook
-## Algorithm
+## Algorithm:
 1.Get the independent variable X and dependent variable Y.
 
 2.Calculate the mean of the X -values and the mean of the Y -values.
@@ -95,4 +95,6 @@ predict2 = predict(np.array([1,7]),theta)*10000
 print("For population of 70,000, we pewdict a profit of $ "+str(round(predict2,0)))
 
 ~~~
-## Output
+## Output:
+
+![ml1](https://user-images.githubusercontent.com/100425381/195585761-ab55f536-2ce5-4736-97b2-ccba50f7ad14.png)
