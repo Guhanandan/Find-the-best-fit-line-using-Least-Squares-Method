@@ -7,7 +7,9 @@ Hardware – PCs
 Anaconda – Python 3.7 Installation / Jupyter notebook
 ## Algorithm
 1.Get the independent variable X and dependent variable Y.
+
 2.Calculate the mean of the X -values and the mean of the Y -values.
+
 3.Find the slope m of the line of best fit using the formula.
 <img width="231" alt="formula1" src="https://user-images.githubusercontent.com/100425381/195584538-0b5ccd4d-d6e7-4f5e-9210-ec236ba3eade.png">
 
@@ -21,6 +23,8 @@ Anaconda – Python 3.7 Installation / Jupyter notebook
 Program to implement univariate Linear Regression to fit a straight line using least squares.
 Developed by: GUHANANDAN V
 RegisterNumber: 212221220014
+
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
