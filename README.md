@@ -100,4 +100,5 @@ print("For population of 70,000, we pewdict a profit of $ "+str(round(predict2,0
 ![ml1](https://user-images.githubusercontent.com/100425381/195585761-ab55f536-2ce5-4736-97b2-ccba50f7ad14.png)
 ![ml2](ht!![ml3](https://user-images.githubusercontent.com/100425381/195586172-251a5efd-f2be-4198-9fef-ea788470a38a.png)
 [ml3](https://user-images.githubusercontent.com/100425381/195586114-adf5c4d8-4fc3-45f2-9fa8-544a82687acd.png)
+![ml4](https://user-images.githubusercontent.com/100425381/195586416-836058f8-b9af-47bb-96f6-cfc884969069.png)
 
