@@ -3,8 +3,8 @@
 To implement univariate Linear Regression to fit a straight line using least squares.
 
 ## Equipments Required:
-Hardware – PCs
-Anaconda – Python 3.7 Installation / Jupyter notebook
+1.Hardware – PCs
+2.Anaconda – Python 3.7 Installation / Jupyter notebook
 ## Algorithm:
  1.Get the independent variable X and dependent variable Y.
 
