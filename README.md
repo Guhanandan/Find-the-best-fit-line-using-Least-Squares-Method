@@ -63,7 +63,7 @@ plt.plot(X,y_predicted,color='red')
 plt.show()
 ~~~
 ## Output:
-best fit line
+
 ![ml13](https://user-images.githubusercontent.com/100425381/198864347-42c40687-4790-4f7d-ad47-0874dd95ee1d.png)
 
 
